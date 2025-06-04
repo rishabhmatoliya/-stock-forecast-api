@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: stock-predictor-backend
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python app.py
+    envVars:
+      - key: FLASK_ENV
+        value: production
+      - key: ALPHA_VANTAGE_API_KEY
+        value: FU569QGEIYR8YQ1X
+      - key: FINNHUB_API_KEY
+        value: d0rk6n1r01qumepenvv0d0rk6n1r01qumepenvvg
