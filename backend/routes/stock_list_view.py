@@ -15,6 +15,10 @@ def get_stocks():
         response = requests.get(url)
         data = response.json()
 
+        # Make sure 'data' is a list
+        if not isinstance(data, list):
+            return jsonify({"error": "Unexpected response format from API"}), 500
+
         stocks = [
             {
                 "symbol": item.get("symbol", ""),
