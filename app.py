@@ -1,12 +1,15 @@
 from flask import Flask
 from backend.routes.stock_routes import stock_routes
 from backend.routes.trade_routes import trade_routes
+from backend.routes.stock_list_view import stock_list_view
+
 
 app = Flask(__name__)
 
 # Register blueprints
 app.register_blueprint(stock_routes)
 app.register_blueprint(trade_routes)
+app.register_blueprint(stock_list_view) 
 
 @app.route("/")
 def home():
