@@ -7,7 +7,7 @@ load_dotenv()
 
 stock_list_view = Blueprint("stock_list_view", __name__, url_prefix="/api/stocklist")
 
-@stock_list_view.route("/", methods=["GET"])
+@stock_list_view.route("/api/stocks", methods=["GET"])
 def get_stocks():
     try:
         FINNHUB_API_KEY = os.getenv("FINNHUB_API_KEY")
