@@ -30,7 +30,7 @@ def get_stocks():
                 "symbol": item.get("symbol", ""),
                 "name": item.get("description", "")
             }
-            for item in data[:20]
+            for item in data[:]
         ]
 
         return jsonify(stocks)
